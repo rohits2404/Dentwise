@@ -131,7 +131,7 @@ export function RecentAppointments() {
                                     </TableCell>
                                     <TableCell className="text-right">
                                         <div className="text-xs text-muted-foreground">
-                                            Click status to toggle
+                                            Click Status To Toggle
                                         </div>
                                     </TableCell>
                                 </TableRow>
