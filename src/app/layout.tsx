@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     title: "DentWise - AI Powered Dental Assistant",
     description:
         "Get Instant Dental Advice Through Voice Calls With Our AI Assistant. Available 24/7.",
+    icons: {
+        icon: "/assets/icon.svg",
+    },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

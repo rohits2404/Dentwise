@@ -3,10 +3,15 @@ import { FeatureCards } from "@/components/voice/feature-cards";
 import { ProPlanRequired } from "@/components/voice/pro-plan-required";
 import { VapiWidget } from "@/components/voice/vapi-widget";
 import { WelcomeSection } from "@/components/voice/welcome-section";
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const VoicePage = async () => {
+    const user = await currentUser();
+
+    if (!user) redirect("/");
+
     const { has } = await auth();
 
     const hasProPlan = has({ plan: "ai_basic" }) || has({ plan: "ai_pro" });
