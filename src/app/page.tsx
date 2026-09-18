@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { LandingPage } from "@/features/home";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import React from "react";
 
-const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-            <Button>Click Me</Button>
-        </div>
-    );
+const HomePage = async () => {
+    const user = await currentUser();
+
+    if (user) redirect("/dashboard");
+
+    return <LandingPage />;
 };
 
-export default Home;
+export default HomePage;
