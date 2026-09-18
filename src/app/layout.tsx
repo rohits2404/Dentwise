@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "DentWise - AI Powered Dental Assistant",
     description:
-        "Get Instant Dental Advice Through Voice Calls With Our AI Assistant. Avaiable 24/7.",
+        "Get Instant Dental Advice Through Voice Calls With Our AI Assistant. Available 24/7.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -26,7 +26,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
             >
-                <ClerkProvider>
+                <ClerkProvider
+                    appearance={{
+                        variables: {
+                            colorPrimary: "#e78a53",
+                            colorBackground: "#f3f4f6",
+                            colorForeground: "#111827",
+                            colorMutedForeground: "#6b7280",
+                            colorInput: "#f3f4f6",
+                        },
+                    }}
+                >
                     <TanStackProvider>{children}</TanStackProvider>
                 </ClerkProvider>
             </body>
